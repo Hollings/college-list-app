@@ -13,25 +13,15 @@ use Illuminate\Http\Request;
 |
 */
 
-
-Route::resource('college', 'CollegeController');
-
-//// Get all schools
-//Route::get('/college/', 'CollegeController@index');
-//
-//// Add a school to the master list
-//Route::post('/college/store/', 'CollegeController@store');
-//
-//// Edit a school or its data in the master list
-//Route::post('/college/update/{college}', 'CollegeController@update');
-//
-//// Remove a school from the master list
-//Route::post('/college/delete/{college}', 'CollegeController@delete');
-//
-//// Bulk remove schools
-//Route::post('/college/deletemany', 'CollegeController@deleteMany');
+// Remove multiple selected schools
+Route::delete('/college/deletemany', 'CollegeController@deleteMany');
 
 // Export selected schools to a CSV file
 Route::post('/college/csv', 'CollegeController@exportCSV');
+
+// Set up resource routes
+Route::resource('college', 'CollegeController');
+
+
 
 

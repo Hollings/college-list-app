@@ -24,7 +24,6 @@ class CollegeController extends Controller
         return $colleges;
     }
 
-
     /**
      * Return a single school
      *
@@ -65,15 +64,17 @@ class CollegeController extends Controller
         return $college;
     }
 
+
     /**
      * Edit a school or its data in the master list
      *
+     * @param College $college
      * @param Request $request
-     * @return mixed
+     * @return College
      */
-    public function update(College $college,Request $request)
+    public function update(College $college, Request $request)
     {
-//        return $request->all();
+
         // Check if the right data is in the request and return any errors
         $rules = array(
             'name' => 'required',
@@ -97,7 +98,7 @@ class CollegeController extends Controller
     /**
      * Remove a school from the master list
      *
-     * @param Request $request
+     * @param College $college
      * @return string
      */
     public function destroy(College $college)

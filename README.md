@@ -26,7 +26,8 @@ Method | URI | Description
 ------ | --- | ----
 GET\|HEAD  | api/college                | View a list of all schools   
 POST      | api/college                | Add a school to the database   
-POST      | api/college/csv            | Export a CSV of selected schools                
+POST      | api/college/csv            | Export a CSV of selected schools 
+DELETE     | api/college/deletemany | Delete multiple schools at once               
 GET\|HEAD  | api/college/{college}      | View data from single school    
 PUT\|PATCH | api/college/{college}      | Edit an existing school  
 DELETE    | api/college/{college}      | Remove a school from the database 
