@@ -13,6 +13,25 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+Route::resource('college', 'CollegeController');
+
+//// Get all schools
+//Route::get('/college/', 'CollegeController@index');
+//
+//// Add a school to the master list
+//Route::post('/college/store/', 'CollegeController@store');
+//
+//// Edit a school or its data in the master list
+//Route::post('/college/update/{college}', 'CollegeController@update');
+//
+//// Remove a school from the master list
+//Route::post('/college/delete/{college}', 'CollegeController@delete');
+//
+//// Bulk remove schools
+//Route::post('/college/deletemany', 'CollegeController@deleteMany');
+
+// Export selected schools to a CSV file
+Route::post('/college/csv', 'CollegeController@exportCSV');
+
+
